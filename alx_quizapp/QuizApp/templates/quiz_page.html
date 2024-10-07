@@ -1,0 +1,14 @@
+{% extends "generic_html.html" %}
+
+{% block title %} {{quiz_title}} {% endblock title %}
+
+{% block content %}
+{% for question in questions %}
+<h2>{{question}}</h2>
+{% for choice in question.choices.all %}
+<input type="radio" id="choice_{{choice.id}}" name="question_{{question.id}}" value="{{choice.id}}">
+<label for="choice_{{choice.id}}">{{choice.text}}</label>
+<br>
+{% endfor %}
+{% endfor %}
+{% endblock content %}

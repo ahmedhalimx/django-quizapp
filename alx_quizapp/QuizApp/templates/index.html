@@ -5,10 +5,8 @@ Quiz App
 {% endblock title %}
 
 {% block content %}
-<h1>Welcome To Quiz App</h1>
-<ul>
-	<li>Trending</li>
-	<li>Browse Categories</li>
-	<li>Sign Up</li>
-</ul>
+<h1 style="border-bottom: 2px solid black;">Welcome To Quizo!</h1>
+{% for quiz in quizzes %}
+<a href="{% url 'quiz_page' quiz.id %}"><h1>{{quiz}}</h1></a>
+{% endfor %}
 {% endblock content %}
